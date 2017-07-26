@@ -1,0 +1,33 @@
+---
+spring:
+  profiles: local
+  datasource:
+    url: jdbc:mysql://localhost:3306/library
+    driverClassName: com.mysql.jdbc.Driver
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddlauto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+server:
+  port: 8080
+---
+spring:
+  profiles: dev-aws, default
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:3306/library
+    driverClassName: com.mysql.jdbc.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddlauto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+server:
+  port: 5000
+
