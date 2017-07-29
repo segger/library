@@ -4,3 +4,6 @@
 target/
 
 *.credentials
+
+node_modules/
+dist/
