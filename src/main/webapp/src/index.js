@@ -1,9 +1,11 @@
 import angular from 'angular';
 
-import bookModule from './book/bookModule';
+import './index.less';
+
+import bookModule from './bookList/bookModule';
 
 angular.module('main', [
-    bookModule
+  bookModule,
 ]);
 
 angular.bootstrap(document.documentElement, ['main']);
