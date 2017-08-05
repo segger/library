@@ -1,4 +1,6 @@
+import BookListController from './book-list.controller';
+
 module.exports = {
   template: require('./book-list.html'),
-  controller: function() {},
+  controller: BookListController,
 };
