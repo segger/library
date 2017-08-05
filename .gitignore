@@ -7,3 +7,7 @@ target/
 
 node_modules/
 yarn.lock
+
+src/main/resources/public/
+app.bundle.js
+app.bundle.js.map
