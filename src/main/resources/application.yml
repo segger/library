@@ -1,3 +1,7 @@
+spring:
+  data:
+    rest:
+      basePath: /api
 ---
 spring:
   profiles: local
@@ -30,4 +34,3 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
 server:
   port: 5000
-

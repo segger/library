@@ -4,7 +4,7 @@
   "main": "app/index.js",
   "scripts": {
     "build": "webpack",
-    "serve": "webpack-dev-server --port 9000 --content-base public",
+    "serve": "webpack-dev-server",
     "lint": "eslint ./app/"
   },
   "author": "segger",
