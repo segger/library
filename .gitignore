@@ -6,3 +6,4 @@ target/
 *.credentials
 
 node_modules/
+yarn.lock
