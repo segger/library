@@ -38,6 +38,7 @@
                                     <directory>src/main/webapp/public</directory>
                                     <excludes>
                                         <exclude>app.bundle.js.map</exclude>
+                                        <exclude>api/</exclude>
                                     </excludes>
                                 </resource>
                             </resources>

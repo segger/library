@@ -1,0 +1,24 @@
+{
+  "_embedded" : {
+    "books" : [ {
+      "title" : "Vild och fri",
+      "author" : "Marilyn Halvorson",
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:9000/api/books/1"
+        },
+        "book" : {
+          "href" : "http://localhost:9000/api/books/1"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:9000/api/books"
+    },
+    "profile" : {
+      "href" : "http://localhost:9000/api/profile/books"
+    }
+  }
+}
