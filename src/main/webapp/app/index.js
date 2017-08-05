@@ -1,3 +1,8 @@
 import angular from 'angular';
+import uirouter from 'angular-ui-router';
 
-angular.module('segger-library', []);
+import routes from './routes';
+import books from './books';
+
+angular.module('segger-library', [uirouter, books])
+      .config(routes);
