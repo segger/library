@@ -23,7 +23,7 @@ module.exports = function(options) {
     },
     {
       test: /\.css$/,
-      loader: 'css-loader',
+      loader: 'style-loader!css-loader',
     },
   ];
 

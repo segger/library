@@ -1,3 +1,5 @@
+require('./books.css');
+
 import angular from 'angular';
 import uirouter from 'angular-ui-router';
 import angularHal from 'angular-hal';

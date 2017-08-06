@@ -1,0 +1,11 @@
+.content {
+}
+
+.header {
+  min-height: 5em;
+}
+
+.header .title {
+  font-weight: bold;
+  text-transform: uppercase;
+}

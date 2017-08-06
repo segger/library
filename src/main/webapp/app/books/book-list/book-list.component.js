@@ -1,3 +1,4 @@
+require('./book-list.css');
 import BookListController from './book-list.controller';
 
 module.exports = {

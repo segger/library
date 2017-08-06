@@ -1,4 +1,11 @@
-<div data-ng-repeat="item in $ctrl.books">
-  <div>{{ item.title }}</div>
-  <div>{{ item.author }}</div>
-</div>
+<table class="table">
+  <thead>
+    <tr><th>Titel</th><th>Författare</th></tr>
+  </thead>
+  <tbody>
+    <tr class="bookRow" data-ng-repeat="item in $ctrl.books">
+      <td class="title">{{ item.title }}</td>
+      <td class="author">{{ item.author }}</td>
+    </tr>
+  </tbody>
+</table>
