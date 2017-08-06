@@ -33,9 +33,20 @@ module.exports = function(options) {
     }),
   ];
 
+  let proxy;
+  if (options.proxy) {
+    proxy = {
+      '/api': {
+        target: 'http://localhost:8080/',
+        secure: false,
+      },
+    };
+  }
+
   const devServer = {
     contentBase: path.join(__dirname, 'public'),
     port: 9000,
+    proxy,
   };
 
   return {

@@ -1,3 +1,4 @@
-<div>
-  book-list.html
+<div data-ng-repeat="item in $ctrl.books">
+  <div>{{ item.title }}</div>
+  <div>{{ item.author }}</div>
 </div>

@@ -11,11 +11,16 @@ export default class BooksService {
 
   getBookList() {
     return this.$q((resolve, reject) => {
-      this.$http.get(this._getBookListPath).then((data) => {
-        resolve(data);
+      this.$http.get(this._getBookListPath).then((resource) => {
+        resource.$request().$get('books').then((data) => {
+          resolve(data);
+        }, (error) => {
+          reject(error);
+        });
       }, (error) => {
         reject(error);
       });
     });
   }
 }
+BooksService.$inject = ['$http', '$q'];

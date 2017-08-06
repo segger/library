@@ -1,5 +1,6 @@
 const makeWebpackConfig = require('./make-webpack-config');
 
 module.exports = makeWebpackConfig({
-  mock: true,
+  mock: false,
+  proxy: true,
 });
