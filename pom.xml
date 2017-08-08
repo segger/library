@@ -32,14 +32,10 @@
                         </goals>
                         <configuration>
                             <overwrite>true</overwrite>
-                            <outputDirectory>${basedir}/src/main/resources/public</outputDirectory>
+                            <outputDirectory>${basedir}/src/main/resources/public/assets</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>src/main/webapp/public</directory>
-                                    <excludes>
-                                        <exclude>app.bundle.js.map</exclude>
-                                        <exclude>api/</exclude>
-                                    </excludes>
+                                    <directory>src/main/webapp/dist</directory>
                                 </resource>
                             </resources>
                         </configuration>

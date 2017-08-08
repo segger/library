@@ -3,12 +3,14 @@ const webpack = require('webpack');
 
 module.exports = function(options) {
   const entry = {
-    main: './app/index.js',
+    vendor: ['bootstrap-loader'],
+    app: './app/index.js',
   };
 
   const output = {
-    path: path.join(__dirname, 'public'),
-    filename: 'app.bundle.js',
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+    publicPath: 'assets/',
   };
 
   const loaders = [
@@ -25,11 +27,32 @@ module.exports = function(options) {
       test: /\.css$/,
       loader: 'style-loader!css-loader',
     },
+    {
+      test: /\.scss$/,
+      loader: 'style-loader!css-loader!sass-loader',
+    },
+    {
+      test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      use: 'url-loader?limit=10000',
+    },
+    {
+      test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+      use: 'file-loader',
+    },
+    {
+      test: /bootstrap-sass\/assets\/javascripts\//,
+      use: 'imports-loader?jQuery=jquery',
+    },
   ];
 
   const plugins = [
     new webpack.DefinePlugin({
       DEV: options.mock,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js',
+      minChunks: Infinity,
     }),
   ];
 
@@ -56,7 +79,7 @@ module.exports = function(options) {
       loaders,
     },
     plugins,
-    devtool: 'source-map',
+    devtool: options.devtool,
     devServer,
   };
 };
