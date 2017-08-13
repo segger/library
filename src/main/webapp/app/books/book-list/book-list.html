@@ -1,11 +1,16 @@
-<table class="table">
+<table class="table table-hover">
   <thead>
-    <tr><th>Titel</th><th>Författare</th></tr>
+    <tr><th>Datum</th><th>Titel</th><th>Författare</th><th></th></tr>
   </thead>
   <tbody>
     <tr class="bookRow" data-ng-repeat="item in $ctrl.books">
+      <td class="date"></td>
       <td class="title">{{ item.title }}</td>
       <td class="author">{{ item.author }}</td>
+      <td>
+        <span class="glyphicon glypicon-pencil"></span>
+        <span class="glyphicon glypicon-trash"></span>
+      </td>
     </tr>
   </tbody>
 </table>

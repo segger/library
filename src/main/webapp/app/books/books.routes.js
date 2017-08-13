@@ -3,5 +3,9 @@ export default function routes($stateProvider) {
     .state('books', {
       url: '/',
       template: require('./books.html'),
+    })
+    .state('add', {
+      url: '/add',
+      template: require('./create.html'),
     });
 }

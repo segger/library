@@ -6,6 +6,7 @@ import angularHal from 'angular-hal';
 
 import routes from './books.routes.js';
 import halConfigure from './books.hal.js';
+import navbar from './navbar/navbar.component';
 import bookList from './book-list/book-list.component';
 import singleBook from './single-book/single-book.component';
 import BooksService from './books.service';
@@ -13,6 +14,7 @@ import BooksService from './books.service';
 export default angular.module('books', [uirouter, angularHal])
   .config(routes)
   .config(halConfigure)
+  .component('navbar', navbar)
   .component('bookList', bookList)
   .component('singleBook', singleBook)
   .service('BooksService', BooksService)

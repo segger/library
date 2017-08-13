@@ -1,16 +1,17 @@
+import Book from '../book';
+
 export default class SingleBookController {
-  constructor(BooksService) {
+  constructor(BooksService, $location) {
     this.service = BooksService;
+    this.$location = $location;
   }
 
-  $onInit() {
-    console.log('init single book controller');
-    /*
-    this.service.getBookList().then((data) => {
-      this.books = data;
+  submit() {
+    let book = new Book(this.title, this.author);
+    this.service.addBook(book).then((data) => {
+      this.$location.path('/');
     }, (error) => {
       console.log(JSON.stringify(error));
-    });*/
+    });
   }
 }
-

@@ -1,4 +1,19 @@
-<form>
-  <input type="text" name="title"></input>
-  <input type="text" name="author"></input>
+<form class="form-horizontal" ng-submit="singleBookCtrl.submit()">
+  <div class="form-group">
+    <label for="title" class="col-sm-2 control-label">Titel</label>
+    <div class="col-sm-8 col-md-6">
+      <input type="text" class="form-control" id="title" ng-model="singleBookCtrl.title" placeholder="Titel">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="author" class="col-sm-2 control-label">Författare</label>
+    <div class="col-sm-8 col-md-6">
+      <input type="text" class="form-control" id="author" ng-model="singleBookCtrl.author" placeholder="Författare">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Lägg till</button>
+    </div>
+  </div>
 </form>
