@@ -1,3 +1,5 @@
+import AddBookController from './add-book/add-book.controller';
+
 export default function routes($stateProvider) {
   $stateProvider
     .state('books', {
@@ -6,6 +8,8 @@ export default function routes($stateProvider) {
     })
     .state('add', {
       url: '/add',
-      template: require('./create.html'),
+      template: require('./add-book/add-book.html'),
+      controller: AddBookController,
+      controllerAs: 'addBookCtrl',
     });
 }
