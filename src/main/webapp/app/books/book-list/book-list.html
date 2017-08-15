@@ -3,14 +3,18 @@
     <tr><th>Datum</th><th>Titel</th><th>Författare</th><th></th></tr>
   </thead>
   <tbody>
-    <tr class="bookRow" data-ng-repeat="item in $ctrl.books">
+    <tr class="bookRow" data-ng-repeat="item in bookListCtrl.books">
       <td class="date"></td>
       <td class="title">{{ item.title }}</td>
       <td class="author">{{ item.author }}</td>
       <td>
-        <span class="glyphicon glyphicon-pencil" data-toggle="modal" data-target="#edit-book-modal"></span>
+        <span class="glyphicon glyphicon-pencil"
+          data-toggle="modal" data-target="#edit-book-modal"
+          data-ng-click="bookListCtrl.setSelected(item)"></span>
         <span class="glyphicon glyphicon-trash"></span>
       </td>
     </tr>
   </tbody>
 </table>
+
+<edit-modal book="bookListCtrl.selectedBook"></edit-modal>

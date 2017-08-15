@@ -1,12 +1,7 @@
 export default class Book {
-  constructor() {
-  }
-
-  setTitle(title) {
-    this.title = title;
-  }
-
-  setAuthor(author) {
-    this.author = author;
+  constructor(resource) {
+    this.title = resource.title;
+    this.author = resource.author;
+    this.href = resource.$href('book');
   }
 };

@@ -1,3 +1,5 @@
+import Book from './book';
+
 export default class BooksService {
   constructor($http, $q) {
     this.$http = $http;
@@ -13,7 +15,11 @@ export default class BooksService {
     return this.$q((resolve, reject) => {
       this.$http.get(this._getBookApiPath).then((resource) => {
         resource.$request().$get('books').then((data) => {
-          resolve(data);
+          let books = [];
+          for (let book of data) {
+            books.push(new Book(book));
+          }
+          resolve(books);
         }, (error) => {
           reject(error);
         });
@@ -26,7 +32,17 @@ export default class BooksService {
   addBook(book) {
     return this.$q((resolve, reject) => {
       this.$http.post(this._getBookApiPath, book).then((resource) => {
-        resolve(resource);
+        resolve(new Book(resource));
+      }, (error) => {
+        reject(error);
+      });
+    });
+  }
+
+  saveBook(book) {
+    return this.$q((resolve, reject) => {
+      this.$http.put(book.href, book).then((resource) => {
+        resolve(new Book(resource));
       }, (error) => {
         reject(error);
       });
