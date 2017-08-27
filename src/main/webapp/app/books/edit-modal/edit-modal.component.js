@@ -7,7 +7,7 @@ class EditModalController {
     this.service.editBook(this.book).then((data) => {
       
     }, (error) => {
-      console.log(error);
+      console.log('EditModal', error);
     });
   }
 };

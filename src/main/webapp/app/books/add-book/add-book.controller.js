@@ -12,7 +12,7 @@ export default class AddBookController {
     this.service.addBook(this.book).then((data) => {
       this.$location.path('/');
     }, (error) => {
-      console.log(error);
+      console.log('AddBook', error);
     });
   }
 }

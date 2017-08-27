@@ -21,7 +21,7 @@ export default class BookListController {
     this.service.getBookList().then((data) => {
       this.books = data;
     }, (error) => {
-      console.log(error);
+      console.log('BookList', error);
     });
   }
 }
