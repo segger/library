@@ -1,15 +1,13 @@
-require('./edit-modal.css');
-
 class EditModalController {
   constructor(BooksService) {
     this.service = BooksService;
   }
 
   save() {
-    this.service.saveBook(this.book).then((data) => {
-      //TODO handle?
+    this.service.editBook(this.book).then((data) => {
+      
     }, (error) => {
-      console.log(JSON.stringify(error));
+      console.log(error);
     });
   }
 };

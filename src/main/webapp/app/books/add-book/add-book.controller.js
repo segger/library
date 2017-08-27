@@ -5,14 +5,14 @@ export default class AddBookController {
     this.service = BooksService;
     this.$location = $location;
 
-    this.book = new Book();
+    this.book = {};
   }
 
   submit() {
     this.service.addBook(this.book).then((data) => {
       this.$location.path('/');
     }, (error) => {
-      console.log(JSON.stringify(error));
+      console.log(error);
     });
   }
 }

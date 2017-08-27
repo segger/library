@@ -39,10 +39,20 @@ export default class BooksService {
     });
   }
 
-  saveBook(book) {
+  updateBook(book) {
     return this.$q((resolve, reject) => {
       this.$http.put(book.href, book).then((resource) => {
         resolve(new Book(resource));
+      }, (error) => {
+        reject(error);
+      });
+    });
+  }
+
+  removeBook(book) {
+    return this.$q((resolve, reject) => {
+      this.$http.delete(book.href).then((data) => {
+        resolve(data);
       }, (error) => {
         reject(error);
       });

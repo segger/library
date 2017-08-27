@@ -11,10 +11,13 @@
         <span class="glyphicon glyphicon-pencil"
           data-toggle="modal" data-target="#edit-book-modal"
           data-ng-click="bookListCtrl.setSelected(item)"></span>
-        <span class="glyphicon glyphicon-trash"></span>
+        <span class="glyphicon glyphicon-trash"
+          data-toggle="modal" data-target="#confirm-modal"
+          data-ng-click="bookListCtrl.setSelected(item)"></span>
       </td>
     </tr>
   </tbody>
 </table>
 
 <edit-modal book="bookListCtrl.selectedBook"></edit-modal>
+<confirm-modal on-confirm="bookListCtrl.remove()"></edit-modal>
